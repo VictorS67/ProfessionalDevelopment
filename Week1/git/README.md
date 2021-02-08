@@ -1,6 +1,8 @@
 # Explanation about Github: What is Github? Why use Github? How to use Github?
 ## What is Github?
-![Figure 1](./github.png)
+<div align="center">
+  <img src="./github.png" alt="Figure 1">
+</div>
 <p align="center">
 <i>"GibHub is a code hosting platform for collaboration and version control." -- From Github</i>
 </p>
@@ -8,14 +10,18 @@
 From our understanding, GitHub is a website that can helps developers (like us) store, manage, and share their code. It also can help them track and control changes to their code. So what is Github exactly? We can know from these two principles: __Version control__ and __Git__.
 
 ### What is Version Control?
-![Figure 2](./versionControl.png)
+<div align="center">
+  <img src="./versionControl.png" alt="Figure 2">
+</div>
 
 Version control is the practice of tracking and managing changes to software code. It keeps track of every modification fof the code in database. If developers make any mistake, they can return back to the earlier version of the code to fix that mistake. For a group work on Github, team members can always view changes.
 
 In the future, we will introduce two important techniques in vesion control - __branching__ and __merging__. These two techniques allow developers make changes in their group works.
 
 ### What is Git?
-![Figure 3](./git.jpeg)
+<div align="center">
+  <img src="./git.jpeg" alt="Figure 3">
+</div>
 
 Git is the most widely used modern __version control system__ in the world today. Git was developed by Linus Torvalds in 2005. The entire codebase and histroy is avaiable on every developer's computer, which allows for easy braching and merging.
 
