@@ -11,3 +11,4 @@ Weekly Tutorials:
 Written by __Junming Zhang__ (1003988982)
 Weekly Tutorials:
 - Week1: [General introduction about NumPy & SciPy](./Week1/Python/README.md)
+- Week2: [Linalg module in NumPy and SciPy](./Week2/Python/README.md)
