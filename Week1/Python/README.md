@@ -87,6 +87,8 @@ print(e)                     # Might print "[[ 0.91940167  0.08143941]
 
 ## References
 - Figure 1: [SciPy](https://se.ewi.tudelft.nl/desosa2019/chapters/scipy/)
+- Figure 2: [SciPy.org](https://www.scipy.org)
+- Figure 3: [Python Numpy Tutorial (with Jupyter and Colab)](https://cs231n.github.io/python-numpy-tutorial/)
 - [SciPy](https://en.wikipedia.org/wiki/SciPy)
 - [SciPy.org](https://www.scipy.org)
 - [Python Numpy Tutorial (with Jupyter and Colab)](https://cs231n.github.io/python-numpy-tutorial/)
