@@ -16,6 +16,8 @@ SciPy family has a modules for linear algebra, optimization, interpolation, imag
 
 ## Code snippet
 In this section, I will show some interesting code snippets for SciPy and NumPy functionality.
+
+This is how SciPy processes an image.
 ```python
 # from Python Numpy Tutorial (with Jupyter and Colab) by CS231n: Convolutional Neural Networks for Visual Recognition
 # of Stanford
@@ -38,6 +40,49 @@ img_tinted = imresize(img_tinted, (300, 300))
 
 # Write the tinted image back to disk
 imsave('assets/cat_tinted.jpg', img_tinted)
+```
+<div align="center">
+    <img src="cat.png" alt="Figure 2: SciPy family">
+</div>
+<p align="center">
+<i>Left: The original image. Right: The tinted and resized image.</i>
+</p>
+
+This is how Numpy processes arrays.
+```python
+# from Python Numpy Tutorial (with Jupyter and Colab) by CS231n: Convolutional Neural Networks for Visual Recognition
+# of Stanford
+import numpy as np
+
+a = np.array([1, 2, 3])   # Create a rank 1 array
+print(type(a))            # Prints "<class 'numpy.ndarray'>"
+print(a.shape)            # Prints "(3,)"
+print(a[0], a[1], a[2])   # Prints "1 2 3"
+a[0] = 5                  # Change an element of the array
+print(a)                  # Prints "[5, 2, 3]"
+
+b = np.array([[1,2,3],[4,5,6]])    # Create a rank 2 array
+print(b.shape)                     # Prints "(2, 3)"
+print(b[0, 0], b[0, 1], b[1, 0])   # Prints "1 2 4"
+
+a = np.zeros((2,2))   # Create an array of all zeros
+print(a)              # Prints "[[ 0.  0.]
+                      #          [ 0.  0.]]"
+
+b = np.ones((1,2))    # Create an array of all ones
+print(b)              # Prints "[[ 1.  1.]]"
+
+c = np.full((2,2), 7)  # Create a constant array
+print(c)               # Prints "[[ 7.  7.]
+                       #          [ 7.  7.]]"
+
+d = np.eye(2)         # Create a 2x2 identity matrix
+print(d)              # Prints "[[ 1.  0.]
+                      #          [ 0.  1.]]"
+
+e = np.random.random((2,2))  # Create an array filled with random values
+print(e)                     # Might print "[[ 0.91940167  0.08143941]
+                             #               [ 0.68744134  0.87236687]]"
 ```
 
 ## References
