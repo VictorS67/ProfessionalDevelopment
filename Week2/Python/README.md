@@ -22,9 +22,12 @@ __note:__ Libraries (e.x., MKL) above are from Intel device.
 ### SciPy Linalg vs. Numpy Linalg
 <i>The SciPy library also contains a linalg submodule, and there is overlap in the functionality provided by the SciPy and NumPy submodules. SciPy contains functions not found in numpy.linalg, such as functions related to LU decomposition and the Schur decomposition, multiple ways of calculating the pseudoinverse, and matrix transcendentals such as the matrix logarithm. Some functions that exist in both have augmented functionality in scipy.linalg. For example, scipy.linalg.eig can take a second matrix argument for solving generalized eigenvalue problems. Some functions in NumPy, however, have more flexible broadcasting options. For example, numpy.linalg.solve can handle “stacked” arrays, while scipy.linalg.solve accepts only a single square array as its first argument.</i>
 
+<i>numpy.linalg for more linear algebra functions. Note that although scipy.linalg imports most of them, identically named functions from scipy.linalg may offer more or slightly differing functionality.</i>
+
 ## Example
 I will share some examples on linear algebra operations with NumPy.
 
 ## Reference
 - [Linear algebra](https://en.wikipedia.org/wiki/Linear_algebra)
 - [Linear algebra (numpy.linalg)](https://numpy.org/doc/stable/reference/routines.linalg.html)
+- [Linear algebra (scipy.linalg)](https://docs.scipy.org/doc/scipy/reference/linalg.html)
