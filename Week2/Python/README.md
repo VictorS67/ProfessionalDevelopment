@@ -17,7 +17,7 @@ The implementation is based on:
 ### Hardware library support
 <i>The NumPy linear algebra functions rely on BLAS and LAPACK to provide efficient low level implementations of standard linear algebra algorithms. Those libraries may be provided by NumPy itself using C versions of a subset of their reference implementations but, when possible, highly optimized libraries that take advantage of specialized processor functionality are preferred. Examples of such libraries are OpenBLAS, MKL (TM), and ATLAS. Because those libraries are multithreaded and processor dependent, environmental variables and external packages such as threadpoolctl may be needed to control the number of threads or specify the processor architecture.</i>
 
-__note:__ Libraries (e.x., MKL) above are from Intel device.
+__note:__ Libraries (e.x., MKL) above are from Intel devices.
 
 ### SciPy Linalg vs. Numpy Linalg
 <i>The SciPy library also contains a linalg submodule, and there is overlap in the functionality provided by the SciPy and NumPy submodules. SciPy contains functions not found in numpy.linalg, such as functions related to LU decomposition and the Schur decomposition, multiple ways of calculating the pseudoinverse, and matrix transcendentals such as the matrix logarithm. Some functions that exist in both have augmented functionality in scipy.linalg. For example, scipy.linalg.eig can take a second matrix argument for solving generalized eigenvalue problems. Some functions in NumPy, however, have more flexible broadcasting options. For example, numpy.linalg.solve can handle “stacked” arrays, while scipy.linalg.solve accepts only a single square array as its first argument.</i>
@@ -25,7 +25,7 @@ __note:__ Libraries (e.x., MKL) above are from Intel device.
 <i>numpy.linalg for more linear algebra functions. Note that although scipy.linalg imports most of them, identically named functions from scipy.linalg may offer more or slightly differing functionality.</i>
 
 ## Example
-I will share some examples on linear algebra operations with NumPy.
+I will share some examples on linear algebra operations with NumPy and SciPy.
 ```python
 import numpy as np
 import numpy.linalg as nla
