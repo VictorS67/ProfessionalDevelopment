@@ -2,7 +2,7 @@
 
 ## General introduction
 Linear algebra is a branch of mathematics focusing on linear equations, linear maps, and their matrix representation in a vector space. Not only for convenienece purpose, also with some algorithms in linear algebra and with hardware (e.x., GPU) support for matrix representation in a computing device, we can complete fast computatio over arge scale of data, that is why linear algebra is popular in modern engineering and data science field like machine learning and data analysis. NumPy has a module called __linalg__, which contains a bunch of fast implementation for linear algebra operations, including:
- - Matrix and vector products
+ - Matrix and vector products (e.x., dot product)
  - Decompositions (e.x., singular value decomposition)
  - Matrix eigenvalues
  - Norms and other numbers (e.x., condition number, trace, determinant)
@@ -16,6 +16,7 @@ The implementation is based on:
 ## Introduction from official document
 ### Hardware library support
 <i>The NumPy linear algebra functions rely on BLAS and LAPACK to provide efficient low level implementations of standard linear algebra algorithms. Those libraries may be provided by NumPy itself using C versions of a subset of their reference implementations but, when possible, highly optimized libraries that take advantage of specialized processor functionality are preferred. Examples of such libraries are OpenBLAS, MKL (TM), and ATLAS. Because those libraries are multithreaded and processor dependent, environmental variables and external packages such as threadpoolctl may be needed to control the number of threads or specify the processor architecture.</i>
+
 __note:__ Libraries (e.x., MKL) above are from Intel device.
 
 ### SciPy Linalg vs. Numpy Linalg
