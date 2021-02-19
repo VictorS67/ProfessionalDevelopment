@@ -154,6 +154,41 @@ E_inv = sla.inv(E)
 
 print(D_inv @ D)
 print(E_inv @ E)
+
+# Decompositions
+# Cholesky decomposition
+cho1 = sla.cholesky(A)
+cho2 = sla.cholesky(B)
+# output:
+# cho1 = 
+#[[1.73205081 0.         0.        ]
+# [0.         2.         0.        ]
+# [0.         0.         2.23606798]]
+# cho2 =
+#[[1.41421356 0.         0.        ]
+# [0.         1.41421356 0.        ]
+# [0.         0.         1.41421356]]
+print(cho1)
+print(cho2)
+
+# singular value decomposition
+svd1 = nla.svd(A)
+svd2 = nla.svd(B)
+# output (in the form U, s: singular values, V.T)
+# svd1 =
+#(array([[0., 0., 1.],
+#       [0., 1., 0.],
+#       [1., 0., 0.]]), array([5., 4., 3.]), array([[0., 0., 1.],
+#       [0., 1., 0.],
+#       [1., 0., 0.]]))
+# svd2 =
+#(array([[1., 0., 0.],
+#       [0., 1., 0.],
+#       [0., 0., 1.]]), array([2., 2., 2.]), array([[1., 0., 0.],
+#       [0., 1., 0.],
+#       [0., 0., 1.]]))
+print(svd1)
+print(svd2)
 ```
 
 ## Reference
