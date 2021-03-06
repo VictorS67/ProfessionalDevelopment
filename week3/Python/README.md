@@ -12,6 +12,11 @@ __Machine learning (ML)__ is a kind of artificial intelligence (AI) algorithms w
 We will introduce packages Scikit-learn modules on supervised and unsupervised learning.
 
 ## Scikit-learn
+<div align="center">
+  <img src="./logo.png" alt="figure 1: logo" width=50% height=50%/>
+</div>
+
+
 Scikit-learn is a free machine learning library in Python. This library works well with NumPy and SciPy. It supports various kinds of ML algorithms, including:
 - Classification: Identifying which category an object belongs to.
   - __Applications__: Spam detection, image recognition.
