@@ -40,6 +40,8 @@ Scikit-learn is a free machine learning library in Python. This library works we
 ## Code snippet
 I will introduce some famous supervised learning algorithms realized in Scikit-learn in this part, you can read their documentation in the reference section to know better for each algorithm.
 ```Python
+>>> import numpy as np
+
 # decision tree algorithm
 >>> from sklearn.datasets import load_iris
 >>> from sklearn.model_selection import cross_val_score
@@ -53,7 +55,6 @@ array([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,
         0.93...,  0.93...,  1.     ,  0.93...,  1.      ])
 
 # K-nearest neighbor
->>> import numpy as np
 >>> from sklearn.neighbors import NearestNeighbors
 >>> samples = [[0, 0, 2], [1, 0, 0], [0, 0, 1]]
 >>> neigh = NearestNeighbors(n_neighbors=2, radius=0.4)
