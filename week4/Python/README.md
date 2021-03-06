@@ -68,7 +68,25 @@ array([1, 0])
 ```
 
 ## KMeans demo
+<div align="center" height=0.6 width=0.6>
+  <img src="./KMeans.png" alt="Kmeans demo" />
+</div>
 
+## Clustering algorithms illustration
+<div align="center" height=0.6 width=0.6>
+  <img src="./GMM1.png" alt="Kmeans demo" />
+  <span> Gaussian distribution to data </span>
+</div>
+
+<div align="center" height=0.6 width=0.6>
+  <img src="./GMM2.png" alt="Kmeans demo" />
+  <span> Gaussian mixture model on==to data (K = 2) </span>
+</div>
+
+<div align="center" height=0.6 width=0.6>
+  <img src="./GMM2D.png" alt="Kmeans demo" />
+  <span> 2D Gaussians </span>
+</div>
 
 ## Reference
 - Murat A. Erdogdu [Introduction to ML & Least Squares](https://erdogdu.github.io/sta414/lectures/lec01/lec01.pdf)
@@ -77,3 +95,4 @@ array([1, 0])
 - [sklearn.cluster.KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html?highlight=kmeans#sklearn.cluster.KMeans)
 - [sklearn.mixture.GaussianMixture](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture)
 - [KMeans demo](http://syskall.com/kmeans.js/)
+- Emad A. M. Andrews [k-Means & EM Algorithm](https://amfarahmand.github.io/csc311/lectures/lec09.pdf)
