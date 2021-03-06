@@ -42,3 +42,4 @@ Scikit-learn is a free machine learning library in Python. This library works we
 - "Paraphrasing Arthur Samuel (1959), the question is: How can computers learn to solve problems without being explicitly programmed?" in Koza, John R.; Bennett, Forrest H.; Andre, David; Keane, Martin A. (1996). Automated Design of Both the Topology and Sizing of Analog Electrical Circuits Using Genetic Programming. Artificial Intelligence in Design '96. Springer, Dordrecht. pp. 151–170. doi:10.1007/978-94-009-0279-4_9
 - Jimmy Ba [Introduction & Linear Models](https://csc413-2020.github.io/assets/slides/lec01.pdf)
 - [Scikit-learning](https://scikit-learn.org/stable/)
+- [Scikit-learning (wikipedia)](https://en.wikipedia.org/wiki/Scikit-learn)
