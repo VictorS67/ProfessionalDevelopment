@@ -68,22 +68,22 @@ array([1, 0])
 ```
 
 ## KMeans demo
-<div align="center" height=0.6 width=0.6>
+<div align="center" height=60% width=60%>
   <img src="./KMeans.png" alt="Kmeans demo" />
 </div>
 
 ## Clustering algorithms illustration
-<div align="center" height=0.6 width=0.6>
+<div align="center" height=60% width=60%>
   <img src="./GMM1.png" alt="Kmeans demo" />
   <span> Gaussian distribution to data </span>
 </div>
 
-<div align="center" height=0.6 width=0.6>
+<div align="center" height=60% width=60%>
   <img src="./GMM2.png" alt="Kmeans demo" />
   <span> Gaussian mixture model on==to data (K = 2) </span>
 </div>
 
-<div align="center" height=0.6 width=0.6>
+<div align="center" height=60% width=60%>
   <img src="./GMM2D.png" alt="Kmeans demo" />
   <span> 2D Gaussians </span>
 </div>
