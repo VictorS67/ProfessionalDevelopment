@@ -67,9 +67,13 @@ array([[10.,  2.],
 array([1, 0])
 ```
 
+## KMeans demo
+
+
 ## Reference
 - Murat A. Erdogdu [Introduction to ML & Least Squares](https://erdogdu.github.io/sta414/lectures/lec01/lec01.pdf)
 - [sklearn.decomposition.PCA
 ](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html?highlight=pca#sklearn.decomposition.PCA)
 - [sklearn.cluster.KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html?highlight=kmeans#sklearn.cluster.KMeans)
 - [sklearn.mixture.GaussianMixture](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture)
+- [KMeans demo](http://syskall.com/kmeans.js/)
