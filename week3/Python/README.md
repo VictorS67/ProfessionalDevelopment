@@ -38,6 +38,7 @@ Scikit-learn is a free machine learning library in Python. This library works we
   - __Algorithms__: preprocessing, feature extraction, and more...
 
 ## Code snippet
+I will introduce some famous supervised learning algorithms realized in Scikit-learn in this part, you can read their documentation in the reference section to know better for each algorithm.
 ```Python
 # decision tree algorithm
 >>> from sklearn.datasets import load_iris
