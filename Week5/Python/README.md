@@ -9,5 +9,15 @@
 - strong GPU acceleration by applying NumPy-like tensors
 - Automatic differentiation system for deep neural neural network
 
+## Features of PyTorch library
+1. Tensors: vector in PyTorch (like NumPy array)
+2. Datasets & DataLoaders: load and manipulate dataset
+3. Transforms: transform and manipulate data representation in PyTorch (ex., Tensor)
+4. Model: build models, like convolutional neural network (CNN), recurrent neural network (RNN), generative adversarial network (GAN)
+5. Automatic differentiation: solving backpropagation - find gradient for loss with each parameter in the model in each turn of training
+6. optimization: optimize the parameters (ex., gradient descent, stochastic gradient descent)
+7. save and load model
+
 ## Reference
 - [Wikipedia: PyTorch](https://en.wikipedia.org/wiki/PyTorch)
+- [PyTorch official tutorial](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
