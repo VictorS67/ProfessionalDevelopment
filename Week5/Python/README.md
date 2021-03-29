@@ -20,7 +20,7 @@
 
 ## Code Snippet
 - Tensor
-``Python
+```Python
 >>> x = torch.tensor([1.0, 2.0, 3.0, 4.0])
 >>> x
 tensor([1., 2., 3., 4.])
@@ -28,6 +28,7 @@ tensor([1., 2., 3., 4.])
 >>> x_np = np.array([1.0, 2.0, 3.0, 4.0], dtype=np.float32)
 >>> x = torch.from_numpy(x_np)
 
+# Torch abstracts over NumPy but uses a NumPy-compatible representation under the hood
 >>> x_np[0] = 100.0
 >>> x[1] = 200.0
 >>> x.data.numpy()[2] = 300
@@ -35,8 +36,18 @@ tensor([1., 2., 3., 4.])
 >>> x
 tensor([100., 200., 300.,   4.])
 
+# Broadcasting
+>>> x.reshape(-1, 1) + x
 
-``
+tensor([[200., 300., 400., 104.],
+        [300., 400., 500., 204.],
+        [400., 500., 600., 304.],
+        [104., 204., 304.,   8.]])
+
+# Dot product
+>>> x @ x.T
+tensor(140016.)
+```
 
 ## Reference
 - [Wikipedia: PyTorch](https://en.wikipedia.org/wiki/PyTorch)
