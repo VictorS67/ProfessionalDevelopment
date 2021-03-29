@@ -149,6 +149,93 @@ plt.plot([0, 10], [params["b"], params["w"] * 10 + params["b"]], "b-")
   <img src="./linreg.png" alt="figure 1: logo" width=50% height=50%/>
 </div>
 
+- neural network regression
+```Python
+# Generate synthetic data
+x = np.linspace(-5, 5, 1000)
+t = x ** 3 - 20 * x + 10 + npr.normal(0, 4, x.shape[0])
+plt.plot(x, t, "r.")
+
+x = torch.from_numpy(x).float()
+t = torch.from_numpy(t)
+
+inputs = x.reshape(x.shape[-1], 1)
+
+params = {
+    "W1": torch.randn(1, 4).requires_grad_(True),
+    "b1": torch.randn(4).requires_grad_(True),
+    "W2": torch.randn(4, 4).requires_grad_(True),
+    "b2": torch.randn(4).requires_grad_(True),
+    "W3": torch.randn(4, 1).requires_grad_(True),
+    "b3": torch.randn(1).requires_grad_(True),
+}
+
+
+# We can define an optimizer which takes care of updating parameters based on their gradient. We can use more complex optimizers like SGD+Momntum or Adam.
+optimizer = torch.optim.SGD(params.values(), lr=0.0001, weight_decay=0.0001, momentum=0.9)
+
+# Pytorch also has implementation of wide range of activation functions such as: Tanh, ReLU, LeakyReLU, ...
+nonlinearity = torch.nn.ReLU()
+
+
+def predict(params, inputs):
+    h1 = nonlinearity(torch.mm(inputs, params["W1"]) + params["b1"])
+    h2 = nonlinearity(torch.mm(h1, params["W2"]) + params["b2"])
+    output = torch.mm(h2, params["W3"]) + params["b3"]
+    return output
+
+
+def cost(params):
+    output = predict(params, inputs)
+    return (1.0 / inputs.shape[0]) * torch.sum(0.5 * (output.reshape(output.shape[0]) - t) ** 2)
+
+
+print(cost(params))
+
+num_epochs = 10000
+
+for i in range(num_epochs):
+    # Evaluate the gradient of the current parameters stored in params
+    loss = cost(params)
+    if i % 500 == 0:
+        print(f"i: {i:<5d} loss: {loss.item():.4f}")
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+with torch.no_grad():
+    final_y = predict(params, inputs)
+    plt.plot(x, t, "r.")
+    plt.plot(x, final_y, "b-")
+ 
+"""
+tensor(295.3063, dtype=torch.float64, grad_fn=<MulBackward0>)
+i: 0     loss: 295.3063
+i: 500   loss: 36.7253
+i: 1000  loss: 27.0040
+i: 1500  loss: 24.3326
+i: 2000  loss: 22.7004
+i: 2500  loss: 21.5779
+i: 3000  loss: 20.7207
+i: 3500  loss: 20.0173
+i: 4000  loss: 19.3916
+i: 4500  loss: 18.8098
+i: 5000  loss: 18.2722
+i: 5500  loss: 17.7829
+i: 6000  loss: 17.3313
+i: 6500  loss: 16.9110
+i: 7000  loss: 16.5139
+i: 7500  loss: 16.1476
+i: 8000  loss: 15.7981
+i: 8500  loss: 15.4753
+i: 9000  loss: 15.1755
+i: 9500  loss: 14.8995
+"""
+```
+<div align="center">
+  <img src="./nnreg.png" alt="figure 1: logo" width=50% height=50%/>
+</div>
+
 ## Reference
 - [Wikipedia: PyTorch](https://en.wikipedia.org/wiki/PyTorch)
 - [PyTorch official tutorial](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
