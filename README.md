@@ -15,3 +15,6 @@ Weekly Tutorials:
 - Week2: [Linalg module in NumPy and SciPy](./Week2/Python/README.md)
 - Week3: [Introduction to Scikit-learn (supervised learning)](./week3/Python/README.md)
 - Week4: [Introduction to Scikit-learn (unsupervised learning)](./week4/Python/README.md)
+- Week5: [Introduction to PyTorch](./Week5/Python/README.md)
+- Week6: [Introduction to Matplotlib](./Week6/Python/README.md)
+- Week7: [Introduction to Pandas](./Week7/Python/README.md)
