@@ -236,6 +236,133 @@ i: 9500  loss: 14.8995
   <img src="./nnreg.png" alt="figure 1: logo" width=50% height=50%/>
 </div>
 
+- multilayer perceptron model
+```Python
+class MLP(nn.Module):
+  def __init__(self, input_dim=784, num_hidden=300, output_dim=10, activation_func=torch.relu):
+    super(MLP, self).__init__()
+    self.fc1 = nn.Linear(input_dim, num_hidden)
+    self.fc2 = nn.Linear(num_hidden, num_hidden)
+    self.fc3 = nn.Linear(num_hidden, num_hidden)
+    self.fc4 = nn.Linear(num_hidden, output_dim)
+    self.activation_func = activation_func
+
+  def forward(self, x):
+    h1 = self.activation_func(self.fc1(x))
+    h2 = self.activation_func(self.fc2(h1))
+    h3 = self.activation_func(self.fc3(h2))
+    out = self.fc4(h3)
+    
+    return out, [h1, h2, h3]
+```
+
+- convolutional neural network model
+```Python
+class ConvNet(torch.nn.Module):
+    def __init__(self):
+        super(ConvNet, self).__init__()
+        self.conv1 = torch.nn.Conv2d(3, 16, 32) # in_channels, out_channels, kernel_size
+        self.pool1 = torch.nn.MaxPool2d(1)      # kernel_size
+        self.conv2 = torch.nn.Conv2d(16, 32, 1)
+        self.pool2 = torch.nn.MaxPool2d(1)
+        self.fc1 = torch.nn.Linear(32, 128)     # in_features, out_features
+        self.fc2 = torch.nn.Linear(128, 10)
+        
+        self.relu = torch.nn.ReLU()
+        
+    def forward(self, x):
+        x = self.conv1(x)
+        # print("After conv1: {}".format(x.shape))
+        x = self.pool1(x)
+        # print("After pool1: {}".format(x.shape))
+        x = self.conv2(x)
+        # print("After conv2: {}".format(x.shape))
+        x = self.pool2(x)
+        
+        x = x.view(x.shape[0], -1)
+        # print(x.shape)
+        x = self.fc1(x)
+        x = self.fc2(x)
+        return x
+```
+
+- recurrent neural network model
+```Python
+class MyRNNCell(nn.Module):
+    def __init__(self, obs_dim, hidden_size, output_dim):
+        """Initialize RNN Cell."""
+        super().__init__()
+        self.hidden_size = hidden_size
+        
+        # Merge input / hidden weights into single module.
+        self.i2h = nn.Linear(obs_dim + hidden_size, hidden_size)
+        self.h2o = nn.Linear(hidden_size, output_dim)
+
+        self.tanh = nn.Tanh()
+        self.softmax = nn.LogSoftmax(dim=1)
+    
+    def forward(self, data, hidden):
+        """Compute forward pass for this RNN cell."""
+        combined = torch.cat((data, hidden), 1)
+
+        hidden = self.i2h(combined)
+        hidden = self.tanh(hidden)
+
+        output = self.h2o(hidden)
+        output = self.softmax(output)
+
+        return output, hidden
+    
+class MyRNN(nn.Module):
+    def __init__(self, obs_dim, hidden_size, output_dim):
+        """Initialize RNN."""
+        super().__init__()
+        self.hidden_size = hidden_size
+        self.output_dim = output_dim
+
+        self.rnn_cell = MyRNNCell(obs_dim, hidden_size, output_dim)
+
+    def forward(self, x):
+        """Compute forward pass on sequence x.
+        
+        Input sequence x has shape (B x L x D), where:
+        B is batch size, L is sequence length, and D is the number of features.
+        """
+        batch_size, seq_len, n_feat = x.size()
+        
+        # Stores outputs of RNN cell
+        output_arr = torch.zeros((batch_size, seq_len, self.output_dim))
+        hidden_arr = torch.zeros((batch_size, seq_len, self.hidden_size))
+        
+        # Send to GPU. This is a gotcha, make sure to send Tensors created
+        # in a model to the same device as input Tensors.
+        output_arr = output_arr.float().to(x.device)
+        hidden_arr = hidden_arr.float().to(x.device)
+
+        hidden = self.init_hidden(batch_size, x.device)
+
+        for i in range(seq_len):
+            # For each iteration, compute RNN on input for current position
+            output, hidden = self.rnn_cell(x[:, i, :], hidden)
+
+            output_arr[:, i, :] = output
+            hidden_arr[:, i, :] = hidden
+
+        return output_arr, hidden_arr
+
+    def init_hidden(self, batch_size, device):
+        """Initialize RNN hidden state.
+        
+        Some people advocate for using random noise instead of zeros, or 
+        training for the initial state. Personally, I don't know if it matters!
+        """
+        return torch.zeros(batch_size, self.hidden_size, device=device)
+```
+
 ## Reference
 - [Wikipedia: PyTorch](https://en.wikipedia.org/wiki/PyTorch)
 - [PyTorch official tutorial](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
+- [Autograd and PyTorch tutorial](https://colab.research.google.com/github/csc413-uoft/2021/blob/master/assets/tutorials/tut02_pytorch.ipynb)
+- [NLP demo](https://colab.research.google.com/github/csc413-uoft/2021/blob/master/assets/tutorials/tut03_train.ipynb)
+- [CNN demo](https://colab.research.google.com/github/csc413-uoft/2021/blob/master/assets/tutorials/tut04_cnn.ipynb)
+- [RNN demo](https://colab.research.google.com/github/csc413-uoft/2021/blob/master/assets/tutorials/tut07_rnn.ipynb#scrollTo=5-NWeCAHQho0)
