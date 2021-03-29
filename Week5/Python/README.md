@@ -18,6 +18,26 @@
 6. optimization: optimize the parameters (ex., gradient descent, stochastic gradient descent)
 7. save and load model
 
+## Code Snippet
+- Tensor
+``Python
+>>> x = torch.tensor([1.0, 2.0, 3.0, 4.0])
+>>> x
+tensor([1., 2., 3., 4.])
+
+>>> x_np = np.array([1.0, 2.0, 3.0, 4.0], dtype=np.float32)
+>>> x = torch.from_numpy(x_np)
+
+>>> x_np[0] = 100.0
+>>> x[1] = 200.0
+>>> x.data.numpy()[2] = 300
+
+>>> x
+tensor([100., 200., 300.,   4.])
+
+
+``
+
 ## Reference
 - [Wikipedia: PyTorch](https://en.wikipedia.org/wiki/PyTorch)
 - [PyTorch official tutorial](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
