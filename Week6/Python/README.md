@@ -11,6 +11,8 @@ Simply speaking, Matplotlib is a Python programming library for plotting, and it
   <img src="./matplotlib-tutorial.png" />
 </div>
 
+Matplotlib can plot some useful diagrams, like bar chart, pie chart, histogram, and line chart. If you know R (tidyverse and ggplot2) or Matlab, you will find this library works like them in making statistics charts. I will make comparison between this library and Matlab/R in the following. If you are familar with NumPy and SciPy, you will find this library is easily to use.
+
 ## Comparison with Matlab
 - Matplotlib provides Matlab style interface
 - Incorporates the ability of Matlab in Python, but free and open source 
