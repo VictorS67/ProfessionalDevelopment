@@ -300,10 +300,42 @@ dtype: object
 ```
 
 5. plot
+<pre>
+<code>
+import matplotlib.pyplot as plt
+plt.close("all")
+</code>
+</pre>
+
 ```python
 >>> ts = pd.Series(np.random.randn(1000), index=pd.date_range("1/1/2000", periods=1000))
 >>> ts = ts.cumsum()
 >>> ts.plot()
+```
+<div align="center">
+  <img src="pandas_plot1.png" width=50% height=50%/>
+</div>
+
+```python
+>>> df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=["A", "B", "C", "D"])
+>>> plt.figure()
+>>> df.plot()
+```
+<div align="center">
+  <img src="pandas_plot2.png" width=50% height=50%/>
+</div>
+
+6. import/export data
+```python
+# write to csv
+df.to_csv("foo.csv")
+# read from csv
+pd.read_csv("foo.csv")
+
+# write to excel
+df.to_excel("foo.xlsx", sheet_name="Sheet1")
+# read from excel
+pd.read_excel("foo.xlsx", "Sheet1", index_col=None, na_values=["NA"])
 ```
 
 ## Reference
