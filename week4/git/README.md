@@ -29,6 +29,41 @@ git fetch remotename
 
 Otherwise, you can always a new remote and then fetch.
 
+## Creating a pull request
+Create a pull request to propose and collaborate on changes to a repository. These changes are proposed in a branch, which ensures that the default branch only contains finished and approved work.
+
+If the default parent repository isn't correct, you can change both the parent repository and the branch with the drop-down lists. You can also swap your head and base branches with the drop-down lists to establish diffs between reference points. References here must be branch names in your GitHub repository.
+<div align="center">
+  <img src="./pullrequest.png" alt="Figure 1">
+</div>
+Note: the base branch is where changes should be applied, the head branch contains what you would like to be applied.
+
+1. On GitHub, navigate to the main page of the repository.
+2. In the "Branch" menu, choose the branch that contains your commits.
+<div align="center">
+  <img src="./branch.png" alt="Figure 2">
+</div>
+
+3. Above the list of files, click __Pull request__.
+<div align="center">
+  <img src="./createpull.png" alt="Figure 3">
+</div>
+
+4. Use the base branch dropdown menu to select the branch you'd like to merge your changes into, then use the compare branch drop-down menu to choose the topic branch you made your changes in.
+<div align="center">
+  <img src="./compare.png" alt="Figure 4">
+</div>
+
+5. Type a title and description for your pull request.
+<div align="center">
+  <img src="./describe.png" alt="Figure 5">
+</div>
+
+6. To create a pull request that is ready for review, click Create Pull Request. To create a draft pull request, use the drop-down and select Create Draft Pull Request, then click Draft Pull Request.
+<div align="center">
+  <img src="./create.png" alt="Figure 6">
+</div>
+
 ## References
 - [Git 07: Updating Your Repo by Setting Up a Remote](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote)
 - [Pushing changes to GitHub](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/pushing-changes-to-github)
