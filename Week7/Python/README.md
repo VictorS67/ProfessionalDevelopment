@@ -10,8 +10,9 @@ However, I will actually talk about this!
 <div align="center">
   <img src="pandas_logo.png" height=50% width=50%/>
 </div>
-Pandas is a free and open-source python library for data manipulation, it can provide an API object for data structures, and manipulations on the structure of the numerical table.
+Pandas is a free and open-source python library for data manipulation, it can provide an API object for data structures, and manipulations on the structure of the numerical table, this library also supports Time Series and some plotting operations (for example, boxplot). If you are familar with database operation (ex., SQL), you will find you can use some operations with pandas easily (ex., SELECT, FULL_JOIN, LEFT_JOIN, RIGHT_JOIN). You can also export the dataframe to a CSV file.
 
 
 ## Reference
 - [wikipedia: pandas (software)](https://en.wikipedia.org/wiki/Pandas_(software))
+- [Matplotlib VS Ggplot2](https://towardsdatascience.com/matplotlib-vs-ggplot2-c86dd35a9378)
