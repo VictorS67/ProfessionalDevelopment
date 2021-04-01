@@ -6,6 +6,12 @@ Written by __Jiakai Shi__ (1003986760)
 
 Weekly Tutorials:
 - Week 1: [Explanation about Github: What is Github? Why use Github? How to use Github?](./Week1/git/README.md)
+- Week 2: [How to register a Github Account?](./Week2/git/README.md)
+- Week3: [Create your first project on Github](./week3/git/README.md)
+- Week4: [Update your project on Github](./week4/git/README.md)
+- Week5: [What is Branch? Why merge occurs?](./Week5/git/README.md)
+- Week6: [What is Remote? How to change remote git repository?](./Week6/git/README.md)
+- Week7: [Final step! How to connect R studio with Github?](./Week7/git/README.md)
 
 ## Python
 Written by __Junming Zhang__ (1003988982)
