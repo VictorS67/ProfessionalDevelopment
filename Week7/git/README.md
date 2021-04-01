@@ -131,3 +131,5 @@ Since this is your repository, you probably don’t have anyone to collaborate w
 2. Scroll down and click the big green __Merge Pull Request__ button.
 3. Click Confirm Merge.
 
+## References
+- [GitHub and RStudio](https://resources.github.com/whitepapers/github-and-rstudio/)
