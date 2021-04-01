@@ -18,8 +18,8 @@ Simply speaking, Matplotlib is a Python programming library for plotting, and it
 ## Code snippet
 
 ## Matplotlib VS Ggplot2
-**Recommended Reading: [Matplotlib VS Ggplot2](https://towardsdatascience.com/matplotlib-vs-ggplot2-c86dd35a9378)**
-To make the appropriate comparison, we use the same data, and try to make the graphs as the same as possible.
+**Recommended Reading: [Matplotlib VS Ggplot2](https://towardsdatascience.com/matplotlib-vs-ggplot2-c86dd35a9378), I got examples from this technical blog.**
+In this section, I use the examples from the readings to compare the performance on plotting some common diagrams of two packages from different languages, and lay the output images below To make the appropriate comparison, the author use the same data, and try to make the graphs as similar as possible.
 
 1. scatter plot
 <div align="center">
@@ -52,7 +52,7 @@ ggsave( width = 7, height = 5, dpi = 300,"scatter_ggplot.png")
 ```
 
 2. contour plot
-3. For example, elevation and depth in geographical maps, magnetic field. 
+For example, elevation and depth in geographical maps, magnetic field. 
 <div align="center">
 <img src="./contour_python.png"/>
 <p>contour plot using python</P>
@@ -129,6 +129,196 @@ ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) +
   theme(axis.text.x = element_text(angle=45, vjust=0.6))+ggtitle("Correlation Matrix")
 ```
 
+4. Regression Multiline graph
+*Note: in this section, the author forgot to match the colors perfectly, and change some shapes in matplotlib plot because the matplotlib cannot draw the shadow region for the regression line, but can be easily done by ggplot2.*
+
+<div align="center">
+<img src="./multi_regression_python.png"/>
+<p>scatter plot using python</P>
+<img src="./multi_regression_r.png"/>
+<p>scatter plot using R</P>
+</div>
+
+### Matplotlib (python) code snippet
+```python
+groups = iris1.groupby("species")
+plt.figure(figsize=(12,8))
+colors = {'setosa':'darkviolet', 'versicolor':'cornflowerblue', 'virginica':'orchid'}
+for name, group in groups:
+    plt.plot(group["sepal_length"], group["sepal_width"], marker="o", linestyle="", 
+    label=name, ms=10, color=colors[name], alpha=.8)
+    m, b = np.polyfit(group["sepal_length"], group["sepal_width"], 1)
+    plt.plot(group["sepal_length"], m*group["sepal_length"]+b, linewidth=5, 
+    color=colors[name], alpha=.5)
+    
+plt.legend()
+plt.title('Iris Species classification')
+plt.xlabel('Sepal Length')
+plt.ylabel('Sepal Width')
+```
+
+### Ggplot2 (R) code snippet
+```R
+theme_set(theme_bw())
+smooth <- ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point(aes(shape=Species), size=2.5) + xlab("Sepal Length") + ylab("Sepal Width") + 
+  ggtitle("Scatterplot with smoothers")
+
+# generalised additive model
+smooth + geom_smooth(method="gam", formula= y~s(x, bs="cs"))
+ggsave( width = 8, height = 5, dpi = 300,"iris_line_ggplot.png")
+```
+5. Multiline connected graph
+<div align="center">
+<img src="./multi_regression_python.png"/>
+<p>scatter plot using python</P>
+<img src="./multi_regression_r.png"/>
+<p>scatter plot using R</P>
+</div>
+
+### Matplotlib (python) code snippet
+```python
+plt.figure(figsize=(20,15))
+plt.plot( 'KNN1', data=teall2, marker='^',alpha=.7, markersize=20, color='indianred', linewidth=5)
+plt.plot( 'KNN9', data=teall2, marker='D',alpha=.7, markersize=20, color='mediumorchid', linewidth=5)
+plt.plot( 'KNN5', data=teall2, marker='o',alpha=.7, markersize=20, color='rebeccapurple', linewidth=5)
+plt.plot( 'LR', data=teall2, marker='s',alpha=.7, markersize=20, color='navy', linewidth=5)
+plt.legend( prop={'size':20})
+plt.xlabel('Number of iterations', fontsize=20)
+plt.ylabel('Test Error', fontsize=20)
+plt.title('Model error over 100 iterations of CV, matplotlib', fontsize=25)
+plt.savefig('linegraph_matplot.png')
+```
+
+### Ggplot2 (R) code snippet
+```R
+p <-ggplot(teall2, aes(x=1:nrow(teall2))) +    geom_line(aes(y = KNN1), color = "indianred") +
+    geom_point(aes(y = KNN1,size = KNN1*2, alpha= 0.7), color = "indianred", shape = 15) + 
+  geom_line(aes(y = KNN9), color="mediumpurple")+
+    geom_point(aes(y = KNN9,size = KNN9*0.8, alpha= 0.7), color="mediumpurple", shape = 16) + 
+  geom_line(aes(y = LR), color="navy")+
+    geom_point(aes(y = LR,size = LR*0.5, alpha= 0.7), color="navy", shape = 17) +   
+    geom_line(aes(y = KNN5), color = "darkorchid") +
+    geom_point(aes(y = KNN5,size = KNN5*0.5, alpha= 0.7), color = "darkorchid", shape = 18) + 
+    theme_bw()+
+    ggtitle("Model error over 100 iterations of cross validation") +
+    xlab("Number of iterations") + ylab("Model Error")
+
+p + theme(
+plot.title = element_text(color="navy", size=14, face="bold"),
+axis.title.x = element_text(color="navy", size=14, face="bold"),
+axis.title.y = element_text(color="navy", size=14, face="bold")
+,legend.title = element_blank()) 
+ # geom_line(aes(group=paste0(variable, InModule)))
+ggsave( width = 10, height = 6, dpi = 300,"multilinegraph_ggplot.png")
+```
+
+6. polar bar chart
+<div align="center">
+<img src="./polar_python.png"/>
+<p>scatter plot using python</P>
+<img src="./polar_r.png"/>
+<p>scatter plot using R</P>
+</div>
+
+### Matplotlib (python) code snippet
+```python
+#Dummy data
+N = 15
+theta = np.linspace(0.0, 2 * np.pi, N, endpoint=False)
+r = np.array(
+    [0.9928, 0.9854, 0.9829, 0.9794, 0.9727, 0.9698, 0.9657, 0.9641, 0.9651, 0.9482, 
+    0.9557, 0.9404, 0.9360, 0.9270,0.9253])
+width = np.array([0.4] * N)
+label = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p"]
+
+
+fig = plt.gcf()
+fig.set_size_inches(18.5, 10.5)
+ax = plt.subplot(111, projection='polar')
+
+ax.set_rlim(0.9, 1)
+ax.set_rticks(np.arange(0.94, 1, 0.02))
+ax.set_thetagrids(theta * 180 / np.pi)
+ax.set_rlabel_position(-15)
+
+ax.bar(x=theta, height=r-.9, width=width, bottom=0.9, alpha=0.8, tick_label=label,color=colors)
+
+plt.show()
+```
+
+### Ggplot2 (R) code snippet
+```R
+mtcars$car = row.names(mtcars)
+theme_set(theme_bw())
+p = ggplot(mtcars, aes(x=car, y=mpg, fill=mpg)) 
+  +geom_col(width = 1, color = "white") 
+
+p <- p + coord_polar()+
+   scale_fill_viridis_c(option = 'C', alpha = .8)
+```
+
+7. Multi Boxplot
+<div align="center">
+<img src="./box_plot_python.png"/>
+<p>scatter plot using python</P>
+<img src="./box_plot_r.png"/>
+<p>scatter plot using R</P>
+</div>
+
+### Matplotlib (python) code snippet
+```
+fig = plt.figure(1, figsize=(20, 8))
+
+# Create an axes instance
+ax = fig.add_subplot(111)
+bp = ax.boxplot(data_to_plot, patch_artist=True)
+
+## change outline color, fill color and linewidth of the boxes
+for box in bp['boxes']:
+    # change outline color
+    box.set( color='navy', linewidth=2)
+    # change fill color
+    box.set( facecolor = 'lavender' )
+
+## change color and linewidth of the whiskers
+for whisker in bp['whiskers']:
+    whisker.set(color='navy', linewidth=2)
+
+## change color and linewidth of the caps
+for cap in bp['caps']:
+    cap.set(color='mediumorchid', linewidth=2)
+
+## change color and linewidth of the medians
+for median in bp['medians']:
+    median.set(color='mediumorchid', linewidth=2)
+
+## change the style of fliers and their fill
+for flier in bp['fliers']:
+    flier.set(marker='o', color='navy', alpha=1)
+
+plt.xlabel('Group', fontsize=30)
+plt.ylabel('Scores', fontsize=30)
+plt.title('Boxplot using Matplotlib', fontsize=35)
+plt.savefig('box_matplot.png')
+```
+
+### Ggplot2 (R) code snippet
+```R
+theme_set(theme_bw())
+
+# multi boxplot
+g <- ggplot(mpg, aes(manufacturer, cty))
+g + geom_boxplot() + 
+  geom_dotplot(binaxis='y', stackdir='center',
+              dotsize = .5, fill="red") +
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title="Box plot + Dot plot", 
+       subtitle="City Mileage vs Class: Each dot represents 1 row in source data",
+       caption="Source: mpg",
+       x="Class of Vehicle",
+       y="City Mileage")
+```
 
 ## Reference
 - [matplotlib official website](https://matplotlib.org/)
