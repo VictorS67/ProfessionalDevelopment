@@ -14,3 +14,8 @@ Here, x and y are known (and commonly used) variables from your data, and a_1 an
 
 2. Next, you generate a fitted model by finding the model from the family that is the closest to your data. 
 This takes the generic model family and makes it specific, like y = 3 * x + 7 or y = 9 * x ^ 2.
+
+### note that:
+It’s important to understand that a fitted model is just the closest model from a family of models. That implies that you have the “best” model (according to some criteria); it doesn’t imply that you have a good model and it certainly doesn’t imply that the model is “true”. George Box puts this well in his famous aphorism:
+
+All models are wrong, but some are useful.
