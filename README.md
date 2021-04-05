@@ -24,3 +24,15 @@ Weekly Tutorials:
 - Week5: [Introduction to PyTorch](./Week5/Python/README.md)
 - Week6: [Introduction to Matplotlib](./Week6/Python/README.md)
 - Week7: [Introduction to Pandas](./Week7/Python/README.md)
+
+## Git
+Written by __Fuyuan Jiang__ (1004300053)
+
+Weekly Tutorials:
+- Week 1: [Explanation about Github: What is Github? Why use Github? How to use Github?](./Week1/R/README.md)
+- Week 2: [How to register a Github Account?](./Week2/R/README.md)
+- Week3: [Create your first project on Github](./week3/R/README.md)
+- Week4: [Update your project on Github](./week4/R/README.md)
+- Week5: [What is Branch? Why merge occurs?](./Week5/R/README.md)
+- Week6: [What is Remote? How to change remote git repository?](./Week6/R/README.md)
+- Week7: [Final step! How to connect R studio with Github?](./Week7/R/README.md)
