@@ -29,10 +29,10 @@ Weekly Tutorials:
 Written by __Fuyuan Jiang__ (1004300053)
 
 Weekly Tutorials:
-- Week 1: [Explanation about Github: What is Github? Why use Github? How to use Github?](./Week1/R/README.md)
-- Week 2: [How to register a Github Account?](./Week2/R/README.md)
-- Week3: [Create your first project on Github](./week3/R/README.md)
-- Week4: [Update your project on Github](./week4/R/README.md)
-- Week5: [What is Branch? Why merge occurs?](./Week5/R/README.md)
-- Week6: [What is Remote? How to change remote git repository?](./Week6/R/README.md)
-- Week7: [Final step! How to connect R studio with Github?](./Week7/R/README.md)
+- Week 1: [Why we need to learn R](./Week1/R/README.md)
+- Week 2: [Introduction to R sysmatically](./Week2/R/README.md)
+- Week3: [How can we learn R from zero to hero](./week3/R/README.md)
+- Week4: [Basis of your R models](./week4/R/README.md)
+- Week5: [Linear regression and real-life examples](./Week5/R/README.md)
+- Week6: [How to read your R output](./Week6/R/README.md)
+- Week7: [How to make a good project report](./Week7/R/README.md)
