@@ -25,10 +25,17 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r}
 summary(cars)
 ```
-
+```
 You can also embed plots, for example:
 
 ```{r, echo=FALSE}
 plot(cars)
 ```
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```
+R Markdown files are designed to be used with the ```rmarkdown``` package. ```rmarkdown``` comes installed with the RStudio IDE, but you can acquire your own copy of ```rmarkdown``` from CRAN with the command:
+```
+install.packages("rmarkdown")
 ```
