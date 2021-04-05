@@ -25,7 +25,7 @@ Weekly Tutorials:
 - Week6: [Introduction to Matplotlib](./Week6/Python/README.md)
 - Week7: [Introduction to Pandas](./Week7/Python/README.md)
 
-## Git
+## R
 Written by __Fuyuan Jiang__ (1004300053)
 
 Weekly Tutorials:
