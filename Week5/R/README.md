@@ -1,4 +1,4 @@
-# Linear REgression
+# Linear Regression
 ## Howt o build your linear regression model on R
 Last week we introduced the basis of models in R and we are talked a little on the topic of linear regreesion.
 This week, we will continue to learn Linear regression and also continue to solve the example from last week!
