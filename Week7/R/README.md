@@ -50,3 +50,8 @@ Consider how authors typically include graphs (or tables, or numbers) in a repor
 In the R Markdown paradigm, each report contains the code it needs to make its own graphs, tables, numbers, etc. The author can automatically update the report by re-knitting.
 
 2. convert - You can convert the file. The ```rmarkdown``` package will use the ```pandoc``` program to transform the file into a new format. For example, you can convert your .Rmd file into an HTML, PDF, or Microsoft Word file. You can even turn the file into an HTML5 or PDF slideshow. ```rmarkdown``` will preserve the text, code results, and formatting contained in your original .Rmd file.
+
+
+In practice, authors almost always knit and convert their documents at the same time. In this article, I will use the term render to refer to the two step process of knitting and converting an R Markdown file.
+
+You can manually render an R Markdown file with rmarkdown::render(). This is what the above document looks like when rendered as a HTML file.
