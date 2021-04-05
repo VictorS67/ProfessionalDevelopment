@@ -32,3 +32,6 @@ Jared Lander’s R for Everyone
 R in Action by Robert Kabacoff
 The free introduction to R manual by CRAN
 Note that: Reading a book is the most systemic way of learning, but to due with a very specific question, you better search the question on youtube (save you a lot of time!)
+
+(more content will be discussed in the next week)
+
